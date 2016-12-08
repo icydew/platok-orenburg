@@ -1,0 +1,50 @@
+.section-question{
+  color: #696969;
+  padding-top: 80px;
+  .call{
+    padding-top: 40px;
+    color: #222222;
+    font-family: open sans,sans-serif;
+    >.-normal{
+      padding-bottom: 10px;
+    }
+    input[type=text] {
+      width: 320px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: white;
+      background-position: 10px 15px;
+      background-repeat: no-repeat;
+      padding: 15px 20px 15px 40px;
+      &#name{
+      background-image: url('../../images/user2.png');
+      }
+      &#number {
+        background-image: url('../../images/tel_52Z1pCs.png');
+      }
+    }
+    input[type=submit] {
+      margin-left: 10px;
+      background-color: #F7A800;
+      color: #333333;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 25px;
+      border: 1px solid #333333;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #FBC600;
+    }
+  }
+  .arrow{
+    padding-left: 800px;
+    padding-top: 5px;
+
+  }
+
+}

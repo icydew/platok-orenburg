@@ -1,0 +1,56 @@
+@import "minireset.min";
+
+body {
+  font-family: open sans condensed,sans-serif;
+  font-size: 13px;
+  color: #212121;
+}
+p{
+  font-family: verdana,geneva,sans-serif;
+}
+
+/* -------------------------------------
+       TYPOGRAPHY
+------------------------------------- */
+.-normal{
+  font-size: 14px;
+}
+.-large{
+  font-size: 19px;
+}
+.-title1{
+  font-size: 25px;
+}
+.-title2{
+  font-size: 30px;
+}
+.-title3{
+  font-size: 35px;
+}
+.-title4{
+  font-size: 40px;
+}
+.-title5{
+  font-size: 47px;
+}
+.-title6{
+  font-size: 55px;
+}
+.-title7{
+  font-size: 68px;
+}
+.-red{
+  color: #B22222;;
+}
+
+@import "components/main-container";
+@import "components/main-content";
+@import "components/main-wrapper";
+@import "components/section-comment";
+@import "components/section-product";
+@import "components/section-causes";
+@import "components/section-question";
+@import "components/main-footer";
+@import "components/pop-up";
+
+

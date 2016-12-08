@@ -1,0 +1,56 @@
+.section-causes {
+  width: 1040px;
+  margin: 0 auto;
+  padding-top: 70px;
+  .-title6 {
+    text-align: center;
+    color: white;
+  }
+  .linestar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .whiteline {
+      height: 1px;
+      background-color: #ffffff;
+      width: 444px;
+    }
+    > .star {
+      padding: 0 20px;
+    }
+  }
+  .guarantee {
+    .section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 80px;
+
+      .element {
+        width: 335px;
+        height: 290px;
+        position: relative;
+        img {
+          &.background {
+            width: 310px;
+            height: 210px;
+            opacity: 0.8;
+            margin-top: 75px;
+            margin-left: 25px;
+          }
+          &.icon {
+            position: absolute;
+            top: 0;
+          }
+        }
+        > .text {
+          position: absolute;
+          top: 120px;
+          left: 50px;
+        }
+      }
+    }
+  }
+
+}

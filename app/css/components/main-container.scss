@@ -1,0 +1,142 @@
+.main-container {
+  margin: 0 auto;
+  max-width: 1280px;
+  min-width: 960px;
+
+  &.-header {
+    background-image: url("../../images/2-light.png");
+    height: 92px;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    opacity: 0.9;
+    position: fixed;
+    width: 1280px;
+    left: 50%;
+    margin-left: -640px;
+    z-index: 1001;
+
+    .sale {
+      padding: 5px 0 15px 0;
+      height: 92px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &.-logo {
+    background-image: url("../../images/6-k.jpg");
+    background-repeat: no-repeat;
+    height: 75px;
+    .head {
+      height: 75px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .platok {
+        width: 270px;
+        height: 32px;
+      }
+      .telefon {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &.-fon {
+    background-image: url("../../images/fon_WsTXX1L.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+
+  &.-shal {
+    background-image: url("../../images/shal_eag4WZp.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-masteritsa {
+    background-image: url("../../images/masteritsa_y6zWvsb.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-belosnezhka {
+    background-image: url("../../images/belosnezhka_VSYrS2K.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-pelerina {
+    background-image: url("../../images/pelerina_l9K7VTF.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-kosyinka {
+    background-image: url("../../images/kosyinka_6PcZGOj.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-zimnyaya {
+    background-image: url("../../images/zimnyaya-nezhnost-seryij-new.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-raduzhnyij {
+    background-image: url("../../images/raduzhnyij_FHCQKQa.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-klassicheskij {
+    background-image: url("../../images/klassicheskij-stil_bEJOXrR.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-tsvetnyie {
+    background-image: url("../../images/tsvetnyie-snyi_O3gjw6U.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-volshebnyij {
+    background-image: url("../../images/volshebnyij-uzor-70000000_cf6tJeN.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-snechinka{
+    background-image: url("../../images/snechinka.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-russkaya{
+    background-image: url("../../images/russkaya-skazka_csw8s5W.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-zhar{
+    background-image: url("../../images/zhar-ptitsa_BPBomyV.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-kruzhevnaya{
+    background-image: url("../../images/kruzhevnaya-pautinka_E0fFUJN.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-semitsvetik{
+    background-image: url("../../images/semitsvetik-zelenyij-1280-2-new.jpg");
+    background-repeat: no-repeat;
+    height: 690px;
+  }
+  &.-why{
+    background-image: url("../../images/fon-1_hjWXVLp.jpg");
+    background-repeat: no-repeat;
+    height: 1045px;
+    margin-bottom: 50px;
+  }
+  &.-question{
+    background-image: url("../../images/fon-2_nbyJVNM.jpg");
+    background-repeat: no-repeat;
+    height: 409px;
+  }
+}
