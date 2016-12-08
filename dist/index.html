@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300|Open+Sans+Condensed:300italic,300&amp;subset=cyrillic,latin" type="text/css" media="screen"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="jquery.fancybox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="jquery.fancybox.js"></script>
+
+  <title>webpack-start</title>
+</head>
+<body>
+
+<div class="main-container -header">
+  <div class="main-wrapper">
+    <div class="sale">
+      <div>
+        <div class="-title2 -red">Внимание:</div>
+        <div><p>осенняя распродажа ограничена,<br>
+          успейте заказать на выгодных условиях!</p>
+        </div>
+      </div>
+      <div class="-title1 -red">До окончания распродажи осталось:</div>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+
+  <div class="main-container -logo">
+    <div class="main-wrapper">
+      <div class="head">
+        <div>
+          <img class="platok" src="data:image/png;base64,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">
+          <div><p>Максимально удобный интернет-магазин оренбургских пуховых платков</p>
+          </div>
+        </div>
+        <div>
+          <div class="-title2">8 (800) 777-81-35</div>
+          <div><a href="">
+            <img class="telefon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAAeFBMVEUAAAAAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8wAR8yWPcMRAAAAJ3RSTlMA99IUUQ4Dt35XBu/Fv4x1R/PbyK6im5eFZ+riimUuc3BcQDowJxoRf3BHAAAA2ElEQVQY012QV27DMBBEh12S1RUV1/Ts/W+YXcoEbb8PcvAwGAJEwgdS4/KFF6qBhPoHO27VBZhfawtNpI67nbjT4o49E8XSGwk9py10BqYmkr6KugE8J9WhqkndgEPUGkA/c15gzlJqoi4hGF7sUBJ940NsfGV/aTDQ1MKoVBbMQO8oZLOVaZ/8TIFXFOBO7C9J92qDFc0nc02+Am4qSFrEfyLjfCxM4o94xWjxLXfsOPXZ/0Wvy06u1ed+TZkt96s16xEP2FPSMx5xl/tvOjzjrs1BBcPpH1ChGbA9OS+tAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,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"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="main-container -fon">
+    <div class="main-wrapper -head">
+      <div class="-title5">Оренбургские пуховые платки,<br>
+        шали и палантины в Вашем городе !
+      </div>
+      <div class="greyline"></div>
+      <div class="redline"></div>
+      <div class="-title4 -red">Уникальная осенняя распродажа,<br>скидки до 65%</div>
+      <div class="list">
+        <div class="element">
+          <div class="circle"></div>
+          <div class="-title2">Гарантируем 100% качество</div>
+        </div>
+        <div class="element">
+          <div class="circle"></div>
+          <div class="-title2">Доставляем в любую точку России</div>
+        </div>
+        <div class="element">
+          <div class="circle"></div>
+          <div class="-title2">Привозим модели на выбор по МСК и СПб</div>
+        </div>
+        <div class="element">
+          <div class="circle"></div>
+          <div class="-title2">Оплата заказа при получении</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="-title5 -red">Что говорят клиенты о наших изделиях:</div>
+      <div class="iconline">
+        <div class="bluline"></div>
+        <div class="icon"><img src="data:image/png;base64,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"></div>
+        <div class="bluline"></div>
+      </div>
+      <div class="comment">
+        <div class="title">
+          <div>Ирина</div>
+          <div>г. Москва</div>
+          <div>Заказала платок «Белоснежка»</div>
+        </div>
+        <div class="text">
+          «Я очень довольна, заказывала бабушке в подарок, и у меня остались ассоциации об оренбургских платках, что это<br>
+          что-то невесомое, но при этом очень теплое, нежное, и поэтому хотелось пожилому человеку сделать
+          ностальгический подарок.<br>
+          Мне прислали три варианта платка, я изначально хотела платок ручной работы, и когда увидела платки убедилась
+          что ручная работа
+          в приоритете, в любом случае.<br><br>
+          Хотя те два, которые были при выборе «классический стиль» и «зимняя нежность» вполне хорошие платки по
+          цене,<br>
+          которую вы предлагаете. Но я хотела ручной работы, в итоге подарила и произвела должное впечатление.<br>
+          Бабушка очень довольна моим подарком!»
+        </div>
+        <div class="recall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -shal">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Шаль «Оренбургское чудо» —<br>
+          хит знаменитых эксклюзивных платков
+        </div>
+        <div class="about">
+          Шаль «Оренбургское чудо» можно смело назвать самым востребованным
+          из всех оренбургских платков. Эта модель весьма популярна как в России,
+          так и за рубежом. Приобретается чаще, чем любая другая,
+          а высоко ценится — за комфортное тепло, элегантный внешний вид,
+          эксклюзивность вручную вывязанного ажурного узора.<br><br>
+          Оптимальный вариант для подарка за границу.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>130*130 (+/- 10) (эксклюзивная ручная работа)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>натуральный серый, белый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>12 990 р.</s> <strong>8 990 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -31% (экономия: 4 000 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -masteritsa">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Эксклюзивный платок из серии «Мастерица» —<br>
+          виртуозное качество ручной работы
+        </div>
+        <div class="about">
+          Каждый экземпляр — шедевр мастерства рукодельниц Оренбуржья.
+          Невесомая шелковая основа нитей, геометрически выверенная точность
+          завораживающего красотой узора, эксклюзивное исполнение,
+          уютная теплота тончайшего пуха — все это сочетают в себе
+          платки «Мастерицы». <br><br>
+          Идеальное решение для женщин любого возраста.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>140*140 (+/- 10) (эксклюзивная ручная работа)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 70%, шелк 30%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>натуральный серый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>19 990 р.</s> <strong>7 990 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -60% (экономия: 12 000 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -belosnezhka">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Белоснежка» —<br>
+          для торжественных случаев и повседневности
+        </div>
+        <div class="about">
+          Белоснежные кружева не выходят из моды на протяжении десятков веков.
+          Оренбургские мастерицы приготовили специально для вас
+          очаровательный сюрприз — сочетание белого невесомого ажура
+          и уютного мягкого тепла.<br><br>
+          Нарядный платок «Белоснежка» идеально подходит любой женщине
+          вне зависимости от ее возраста и сможет стать эффектным
+          дополнением наряда.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>140*140 (+/- 10) (эксклюзивная ручная работа)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 70%, шелк 30%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>натуральный белый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>14 670 р.</s> <strong>6 990 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -52% (экономия: 7 680 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="comment">
+        <div class="title">
+          <div>Людмила</div>
+          <div>Канада</div>
+          <div>Заказала платок «Белоснежка»</div>
+        </div>
+        <div class="text">
+          «Хотела лично с Вами пообщаться. Расскажите, как все прошло, довольны ли Вы?<br>
+          -Очень легко и вообще очень понравилось, и просто восхищаюсь! Я взяла себе, и еще в подарок, который уже
+          подарила.<br>
+          Мы в восторге! И нет слов - это действительно настоящий оренбургский платок, как я помню, моя бабушка имела
+          такой же.<br>
+          - Да, да, да! Исконно русский платок! -Очень хорошо! Спасибо вам огромное! Мы просто восхищены !»
+
+        </div>
+        <div class="recall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -pelerina">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Пелерина «Карамельный цветок» —<br>
+          изящный женственный аксессуар
+        </div>
+        <div class="about">
+          Красота не требует жертв, если подобрать к наряду оптимальный аксессуар.
+          Например, такой, как пелерина «Карамельный цветок»,
+          идеально подходящая и к вечернему платью, и к деловому костюму,
+          и к уютной повседневной одежде.<br><br>
+          Эксклюзивные изделия ручной работы оренбургских мастериц
+          представлены в широкой цветовой гамме
+          и разнообразных орнаментальных решениях.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>200*100 (+/- 10) (эксклюзивная ручная работа)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 70%, шелк 30%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>уточняйте у менеджера</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>18 770 р.</s> <strong>6 490 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -65% (экономия: 12 280 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -kosyinka">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Косынка «Оренбургское чудо» —<br>
+          хит знаменитых эксклюзивных платков
+        </div>
+        <div class="about">
+          Косынку «Оренбургское чудо» можно смело назвать самым
+          востребованным из всех оренбургских платков. Эта модель весьма
+          популярна как в России, так и за рубежом. Приобретается чаще, чем
+          любая другая, а высоко ценится — за комфортное тепло, элегантный
+          внешний вид, эксклюзивность вручную вывязанного ажурного узора.<br><br>
+          Оптимальный вариант для подарка за границу.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>150*100*100 (+/- 10) (эксклюзивная ручная работа)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>натуральный белый, серый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>10 690 р.</s> <strong>5 790 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -46% (экономия: 4 900 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -zimnyaya">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Зимняя нежность» —<br>
+          модель, популярная во всем мире
+        </div>
+        <div class="about">
+          «Зимняя нежность» — платок, тончайший мягкий ажур которого завоевал
+          сердца миллионов поклонниц. Это признанная классика русского платка
+          в целом и пуховых платков из Оренбурга в частности.<br><br>
+          Модель идеально подходит для создания женственного образа в самое
+          неприятное для модниц время — в зимний сезон. С этим аксессуаром
+          вам не придется ради тепла жертвовать красотой и изящностью.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>130*130 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>белый, бордовый, серый, голубой, синий</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>8 490 р.</s> <strong>7 790 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -43% (экономия: 3 700 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -raduzhnyij">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Палантин «Радужный» —<br>
+          лучшее решение для весенне-осеннего сезона !
+        </div>
+        <div class="about">
+          Эксклюзивная модель, завоевавшая первую награду среди весенних
+          аксессуаров 2014 года. Благодаря богатому выбору цветовых решений
+          и стильному дизайну каждого уникального палантина они не потеряли
+          востребованности даже в зимний период.<br><br>
+          Эту модель приобретают в качестве подарка для самых близких
+          и любимых, а также для поддержания собственного изящно
+          женственного образа.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>180*75 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>уточняйте у менеджера</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>10 490 р.</s> <strong>4 790 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -54% (экономия: 5 700 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -klassicheskij">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Классический стиль» —<br>
+          связан в лучших традициях Оренбурга
+        </div>
+        <div class="about">
+          Платок серии классических узоров Оренбуржья выполнен
+          по всем правилам пуховязальных традиций. <br><br>
+          Олицетворяет собой подлинный классический вариант изделия.<br><br>
+          Тот самый - оренбургский пуховый платок....
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>140*140 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>белый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>6 690 р.</s> <strong>3 690 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -45% (экономия: 3 000 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="comment">
+        <div class="title">
+          <div>Татьяна</div>
+          <div>г. Самара</div>
+          <div>Заказала платок «Классический стиль»</div>
+        </div>
+        <div class="text">
+          «Я получила платочек, открыла, посмотрела. Что касается вашей доставки и всего остального обслуживания, мне
+          все нравится.
+          И очень довольна, что выбрала именно ваш магазин, потому-что другие «магазины», к тем, к кому я обращалась
+          по поводу платков (я же смотрела - выбирала), они все связаны с почтой России, а как известно, на почте никто
+          не разрешит
+          вскрыть посылку, чтобы посмотреть заказанную вещь.<br><br>
+          У вас же мне разрешили открыть и посмотреть, чтобы убедиться в том, что полный комплект и все нормально, все
+          качественно.
+          Потом я расплатилась. И поэтому вам огромное спасибо, продолжайте в том же духе.»
+        </div>
+        <div class="recall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -tsvetnyie">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Цветные сны» —<br>
+          весенняя изысканность вашего образа
+        </div>
+        <div class="about">
+          Платок «Цветные сны», выполненный в лучших традициях оренбургских
+          мастериц, относится к тем редким вещам, которые способны полностью
+          преобразить облик любой женщины. <br><br>
+          Нежные пастельные оттенки гармонично дополняют изящный ажур
+          пуховой вязки и сделают ваш облик по-настоящему весенним.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>130*130 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>цветной</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>6 200 р.</s> <strong>2 990 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -52% (экономия: 3 210 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -volshebnyij">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Волшебный узор» —<br>
+          классика оренбургского стиля
+        </div>
+        <div class="about">
+          Платок «Волшебный узор» воплощает в себе все, за что изделия
+          оренбургских мастериц ценятся во всем мире. <br><br>
+          Очарование ажурного орнамента, невесомость тончайших пуховых нитей
+          на шелковой основе, выверенная точность узора делают эту модель
+          имиджевым аксессуаром и эксклюзивным подарком, который оставит
+          теплую память на долгие годы.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>120*120 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>серый, белый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>5 490 р.</s> <strong>2 790 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -49% (экономия: 2 700 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="comment">
+        <div class="title">
+          <div>Анастасия Алексеевна</div>
+          <div>г. Санкт-Петербург</div>
+          <div>Заказала платок «Волшебный узор»</div>
+        </div>
+        <div class="text">
+          «Заказ очень хорошо упакован. Я еле открыла чтобы посмотреть!:) Очень здорово всё! Платок мне понравился,
+          красивый платок
+          и обслуживание понравилось мне. Я очень рада, что вы мне все рассказали. Я сначала хотела за 6 тысяч купить
+          платок,
+          но тот мне дороговато, вы мне все объяснили. И все быстро. Доставка быстрая очень. Обслуживание очень хорошее,
+          мне понравилось. Через интернет никогда ничего не заказывала ,а тут заказала - мне понравилось.
+          У меня отзыв к вам очень хороший – прямо на пятерку!»
+        </div>
+        <div class="recall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -snechinka">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Палантин «Снежинка» —<br>
+          завораживающая красота зимнего образа
+        </div>
+        <div class="about">
+          Изящество морозных узоров и невесомо-хрупких снежинок притягивают
+          внимание, завораживают, очаровывают. И вся эта зимняя красота
+          идеально воплощена в теплом пуховом палантине «Снежинка».<br><br>
+          Модель идеально подходит для ношения в качестве головного убора
+          или стильного аксессуара к вечерним нарядам.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>160*70 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 70%, шелк 30%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>серый, белый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>4 370 р.</s> <strong>2 790 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -36% (экономия: 1 580 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -russkaya">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Русская сказка» —<br>
+          элегантная стильная классика
+        </div>
+        <div class="about">
+          Плотность вязки, кипенно-белый цвет мягкой пуховой нити, нежный
+          ажурный рисунок, с любовью вывязанный оренбургскими мастерицами,
+          узнаваемы и любимы во всем мире. <br><br>
+          Платок «Русская сказка» побил все рекорды продаж: ни одно другое из
+          популярных изделий народного промысла не пользуется такой же
+          востребованностью, как эта модель!
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>130*130 (+/- 10) <span>(безупречная машинно-ручная вязка)</span></td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 70%, хлопчатобумажная нить 30%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>белый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>4 870 р.</s> <strong>2 590 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -47% (экономия: 2 280 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="comment">
+        <div class="title">
+          <div>Александр</div>
+          <div>г. Санкт-Петербург</div>
+          <div>Заказал платок «Русская сказка»</div>
+        </div>
+        <div class="text">
+          «Товар привезли полностью в сохранности, все понравилось, я покупал в подарок женщине на день рождения – ей
+          очень понравилось. Пришло быстро. Как и обещали доставили вовремя все. Упаковка хорошая, с печатью
+          оренбургской!
+          Я ходил сначала в магазин, потом решил через интернет заказать. И я доволен что у вас заказал.
+          Пока нет необходимости пока, но может быть еще раз закажу. Спасибо большое вашей организации!:))
+          Передайте всем кто исполнял заказ Огромное Спасибо! Удачи Вам!»
+        </div>
+        <div class="recall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -zhar">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Палантин «Жар-птица» —<br>
+          яркая индивидуальная изысканность
+        </div>
+        <div class="about">
+          Плавные переходы полутонов одного цвета от насыщенно-яркого до едва
+          уловимого оттенка в сочетании с белоснежными участками выглядят
+          не просто изысканно, а потрясающе женственно. Особенно если они —
+          на невесомо кружевной ажурной вязке оренбургских мастериц.<br><br>
+          Палантин «Жар-птица» станет изысканным дополнением
+          вашего наряда в любой обстановке.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>160*70 (+/- 10) (безупречная машинно-ручная вязка)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 70%, шелк 30%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>уточняйте у менеджера</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>3 970 р.</s> <strong>2 590 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -35% (экономия: 1 380 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="comment">
+        <div class="title">
+          <div>Михаил</div>
+          <div>г. Санкт-Петербург</div>
+          <div>Заказал платок «Жар-птица»</div>
+        </div>
+        <div class="text">
+          «Я подарил платок и они там все в диком восторге - эта женщина была из Франции, она обрадовалась!
+          Очень хорошее качество, качественный платочек - в кольцо пролез.
+          Удачная упаковка, красивая с печатью - она необычная такая, мне всё понравилось! И тот, кому дарил -тоже
+          понравилось!
+          Все остались довольные!! Удачи в работе ,чтобы у вас много клиентов было ,мне всё очень понравилось!...»
+        </div>
+        <div class="recall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -kruzhevnaya">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Палантин «Кружевная паутинка» —<br>
+          стильная женственность и уютное тепло
+        </div>
+        <div class="about">
+          Палантин «Кружевная паутинка» — одна из лучших моделей оренбургских
+          пуховых платков. Классическое тонкое ажурное кружево из мягчайших
+          нитей в натуральных сдержанно-серых оттенках с полным правом
+          считается международной визитной карточкой Оренбуржья.<br><br>
+          Такие модели везут за границу в качестве ценных имиджевых подарков
+          и с удовольствием носят российские модницы.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>150*70 (+/- 10) (безупречная машинно-ручная вязка)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>белый, серый, персиковый, голубой, розовый</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>3 370 р.</s> <strong>2 190 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -50% (экономия: 2 180 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container -semitsvetik">
+    <div class="main-wrapper -product">
+      <div class="section-product">
+        <div class="-title2">
+          Платок «Семицветик» —<br>
+          стильный аксессуар на каждый день
+        </div>
+        <div class="about">
+          Отличное соотношение цены и качества! <br><br>
+          Легкий и воздушный платок связан с использованием классических
+          орнаментов и имеет разнообразную палитру цветов на любой вкус.
+        </div>
+        <div class="proper">
+          <table>
+            <tr>
+              <td>Размер (см)</td>
+              <td>120*120 (+/- 10) (аккуратная машинная вязка)</td>
+
+            <tr>
+              <td>Состав</td>
+              <td>натуральный козий пух 80%, шелк 20%</td>
+            </tr>
+
+            <tr>
+              <td>Цвет</td>
+              <td>уточняйте у менеджера</td>
+            </tr>
+            <tr>
+              <td>Стоимость</td>
+              <td><s>2 600 р.</s> <strong>1 790 р.</strong></td>
+            </tr>
+          </table>
+        </div>
+        <div class="sale">
+          <div class="-normal">Заказав эту модель, вы получаете: скидку -31% (экономия: 810 р.)</div>
+          <div class="buy">
+            <a class="button" href="">Заказать по акции</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="-title5 -red">Еще отзывы о нашем магазине</div>
+      <div class="iconline">
+        <div class="bluline"></div>
+        <div class="icon"><img src="data:image/png;base64,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"></div>
+        <div class="bluline"></div>
+      </div>
+      <div class="comment">
+        <div class="title">
+          <div>Влада</div>
+          <div>г. Санкт-Петербург</div>
+          <div>Заказала платок «Зимняя нежность»</div>
+        </div>
+        <div class="text">
+          <img class="avatar" src="85ffe04cb439fb0a11e1ee4ec400f686.png">
+
+          «Заказала маме на др и сестре на крестины платки "зимняя нежность". Магазин -супер!:)
+          Теперь всегда буду здесь заказывать:):);)
+          Воспитанные, квалифицированные работники (общаться одно наслаждение),
+          быстрая доставка (доставили точно в срок), большой выбор изделий, и приятные скидки,
+          качество изделия оправдало все ожидания.Красивая, теплая, а главное нужная вещь.
+          Не ожидала, что подарок вызовет столько восторга и восхищения.
+          Теперь знаю, что дарить подругам и родственникам.»
+        </div>
+        <div class="recall"></div>
+      </div>
+      <div class="comment">
+        <div class="title">
+          <div>Вера</div>
+          <div>г. Москва</div>
+          <div>Заказала платок 2 мая 2015 года</div>
+        </div>
+        <div class="text">
+          «Я нашла в интернете ссылку на ваш сайт, после этого всё рассказали – какие модели есть. Кстати, я только у
+          вас нашла
+          платок с серебряной нитью, в остальных интернет-магазинах были только палантины. Единственное что, мы хотели
+          белый,
+          но нас устроил вполне и серый цвет, мне кажется он даже лучше и даже кажется что он лучше был, чем белый.
+          По доставке всё хорошо! Привез ваш курьер, она мне все объяснила и показала много и других платков. Все
+          хорошо!!:)))»
+
+        </div>
+        <div class="recall"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="main-container -why">
+    <div class="main-wrapper section-causes">
+      <div class="-title6">6 причин почему платки заказывают у нас:</div>
+      <div class="linestar">
+        <div class="whiteline"></div>
+        <div class="star"><img src="data:image/png;base64,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"></div>
+        <div class="whiteline"></div>
+      </div>
+      <div class="guarantee">
+        <div class="section">
+          <div class="element">
+            <div><img class="background" src="data:image/png;base64,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"></div>
+            <div><img class="icon" src="d2bb9ade79d60b9aa4978f65506b3e91.png"></div>
+            <div class="text -large">
+              Мы гарантируем вам 100% качество<br>
+              <span class="-red">Все платки связаны в Оренбурге</span><br>
+              из натурального козьего пуха
+            </div>
+          </div>
+          <div class="element">
+            <div><img class="background" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOoAAADOCAYAAAAwqZ5uAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABeFJREFUeNrs3W9rI0UAB+DUhkjhpFKpVE5OCpVIoXLQd34Sv6Jv/QCCIAiCbxQEQRCEgwNBWCgECiVOuBnci/svuklmkueBueZuw73Yux+/3ZnZ5GS5XE6AvE2dAti78zBu4uv7+PM6jIs4zgQVtuNlGKdhvAjjci2M6VgKY59fBBWGeR7GVRjPwpjHP7sLY1YLY/3YmBaCyrE6C+M2vr6Nv09hrB9LYdynB0HlkMxjq13F0M1i0OphTMdKIqhk7TJeVp7G+7p6GNOxehgPVSWo7Fqa1VxNrKwmWFaTKddrYUzH0KiMJM1c9i0xXDtVgsp46jOXQ5YYEFRGkmYuhywxIKiMJM1cDl1iQFAZQX3mcsgSA8fFrO8WpZnLIUsMoFFHUp+5HLLEAII6kvXN0V1LDCCoI2naHN21xACCOoKmzdFdSwwgqCNZ3xzdtcQATCbVyQgfxdK0ObpriQHYzHTa03pDlhiA7VmE8dTWqD9pQMjCn2F8+E7LQU0JeXhY/dIWVE9FQAFB1aiQh0qjgkYF3KPCcVi0BVWbQgGNqk0hH5VGBY0KbDOoGhU0KqBRQaMCO9Y66+vLeaCARgUKCKpGBY0KaFTQqMAOVemFRoXM21SjQsFB1aigUQGNCkcSVHt9IQ+ds76engGNCowRVI0KGhUYaKFRIX+VRgX3qIB7VBBUjQoaFdCocEA6Z31nzg/k1agny+Vy/eDS+YEsvBvGY1OjalPIw2MKaVNQz5wfyOuyV6NCoUHVqJCHSqOCRgXco4KgalTQqIBGhQNi1hc0KiCoIKgufUGjAhoVNCqgUQGNChoV0KhwlGwhhJLaVKNCoUHVqFBAUH2dBRQQVF8QBRoVGKDSqKBRAfeoIKgaFTQqoFHhgJj1hdIbVZtCAUHVplBAUM+dH8g/qIBGBTQqaFRAowLJUxgLjQqFtalGhfxUfUHVqKBRgTGCqlFBowIaFY4kqJ6egf3rnfX1PCpoVGCMoGpU0KiARgWNCuyIWV/QqIB7VBBUjQoaFRgvqDPnCPaud9b3zDmCvVq0HdCokPllr0aFAoOqUUGjAj2qvqBqUyigUbUpFBBUjQoaFdCooFGBHakEFVz6Ai59QVA1KmhUQKPCATHrCxoVcI8KgqpRIQdPkwGfmaRRIdM21aiQj2pIUDUqaFSgx2JIUH2dBRTQqL4gCgoIqkaF/Ro0maRRQaMC7lFBowIaFdCoUAizvqBRAfeoIKj/BPXceYL8gwpkHlRtCvs3aNYX0KhAh9VD408aFQpuU40KBQUV0KhAj0qjgkYFdhVU+3xhvxZDgurJGdCoQI9Bk0kaFTQqMEZQH4bczAL7C+rJcrlMr1dfvXgbxoswLsN4GX9eh3EzsYwD2/JlGF91vWFae71q1R/jaHIaw3sVxvMY6lWQ57VwA1to1OkGf9lTR4iT+zAuai28Cu9dLdzAv1VjBnWIviDfxSDPY5gv1sINGrXnHjUH8xjau9jAV/H1ZWxoOESfhvFbSUHtU2/hy3hvPI+vb/17U6iPwnh9SEHtk1r4ZQz0TQx3msWGHL3Xd/l7aEHtk1r4NgZ5fTnK5g/24aS0e9R9O48tfBODvL4cdeYUMbLVjO/7gjquZ5O3141tCuH/ehXGx4K6W7PJ2+vG9eUom0Jo8msYn/W9aeo8jepxstmmkKblKI7Lw5A3Ceru/ddNIWkiDEElAz/Hn9+2HK+vG9sUIqhkfE+zGt+1HK+vGzctR5GXSlCP0+9x/NByvGlTSH05Co1KBl7F0XavXF83tilEUMnU6zjagtz1GKNNIZtbCCrb8FccbUFe3xSyvhzlw/Q0Kpn8x+v6pJCuTSFpOeqYmEwiS0M3hdQfYzzkTSEalWIN2RSS1o2blqMEFTKQNoV803K8aVNIfTmquKDalM8xanuMcR+bQr4I43tBhc21PcaYlqPG9HntCkFQYURdn219v+Hf9UkYfwgq7F7TY4z15ahZ7b0fTN6sSwsqZCZtClmF+evJmyUrQYXS/S3AANoDUWmJe/gaAAAAAElFTkSuQmCC"></div>
+            <div><img class="icon" src="d425cf8b4e6b30e043241fed76707dff.png"></div>
+            <div class="text -large">
+              <span class="-red">Мы гарантируем доставку</span><br>
+              точно в назначенный срок<br>
+              и для удобства <span class="-red">привезем<br>
+              несколько моделей платков на выбор</span><br>
+            </div>
+          </div>
+          <div class="element">
+            <div><img class="background" src="data:image/png;base64,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"></div>
+            <div><img class="icon" src="5ece0dd79f350ab0d4e5c203f0987895.png"></div>
+            <div class="text -large">
+              Если в течении 14 дней вы поняли<br>
+              что наш платок вам не подошел,<br>
+              <span class="-red">мы вернем вам деньги</span>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="element">
+            <div><img class="background" src="data:image/png;base64,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"></div>
+            <div><img class="icon" src="70a033497b64be685ec28984e57067ad.png"></div>
+            <div class="text -large">
+              <span class="-red">Наши клиенты довольны нашей работой,</span><br>
+              мы видим это по постоянным<br>
+              повторным покупкам и многочисленным<br>
+              положительным отзывам
+            </div>
+          </div>
+          <div class="element">
+            <div><img class="background" src="data:image/png;base64,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"></div>
+            <div><img class="icon" src="e15800d9b93415b400bdf421e831be84.png"></div>
+            <div class="text -large">
+              <span class="-red">Оренбургские платки -</span><br>
+              это шикарный подарок себе<br>
+              и своим близким с русской душой
+
+            </div>
+          </div>
+          <div class="element">
+            <div><img class="background" src="data:image/png;base64,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"></div>
+            <div><img class="icon" src="9c29fa9de2988caea6a7096f93bc3de9.png"></div>
+            <div class="text -large">
+              <span class="-red">У нас более 750 пунктов выдачи<br>
+              по всей России</span><br>
+              это делает процесс получения заказа<br>
+              максимально быстрым и удобным
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="section-comment">
+      <div class="-title5 -red">И еще немного отзывов</div>
+      <div class="iconline">
+        <div class="bluline"></div>
+        <div class="icon"><img src="data:image/png;base64,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"></div>
+        <div class="bluline"></div>
+      </div>
+      <div class="comment">
+        <div class="title">
+          <div>Наталья Михайловна</div>
+          <div>г. Торжок</div>
+          <div>Заказала платок «Классический стиль»</div>
+        </div>
+        <div class="text">
+          «Я вас хочу поблагодарить за прекрасно выполненную работу, я это очень оценила, и восхищаюсь вашей логистикой,
+          и быстрой
+          системой реагирования. Вы такие молодцы, я просто не ожидала, поэтому очень хотела поблагодарить вас.
+          Как-то на рынке я купила пуховую жилетку, она страшно лезла, поэтому я сильно опасалась из- за этого делать
+          заказ
+          в интернет-магазине, но в итоге мне всё очень понравилось - и платочек, и носочки.<br><br>
+          И еще...очень приятно, что вы заранее извещаете смс-кой о том, когда будет доставлен заказ. Понимаете? У вас
+          настолько
+          продумана система доставки, что клиенту приходится только приятно ожидать заказ, оставляя все хлопоты и
+          волнения
+          за своей дверью.Даже сама упаковочка - пакетик, настолько всё культурно!
+          Просто все на высоте, и вы - молодцы! Низкий вам поклон за ваше внимание!»
+        </div>
+        <div class="recall"></div>
+      </div>
+      <div class="comment">
+        <div class="title">
+          <div>Ирина</div>
+          <div>г. Москва</div>
+          <div>Заказала платок «Волшебный узор»</div>
+        </div>
+        <div class="text">
+          «Я покупала маме, ей очень понравилось. Она когда одевает, говорит что тепло-тепло становится. Ей очень
+          понравилось.
+          Курьер доставил мне заказ тогда, когда я попросила, часов после десяти вечера. Все хорошо!»
+        </div>
+        <div class="recall"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="main-container -question">
+    <div class="main-wrapper section-question">
+      <div class="-title7">Остались вопросы?</div>
+      <div class="-title2">Оставьте заявку и через 10 минут наш менеджер проконсультирует вас бесплатно:</div>
+      <div class="call">
+        <div class="-normal"><i>(Заявки обрабатываются ежедневно с 9-00 до 21-00 по московскому времени)</i></div>
+        <div>
+          <form>
+            <input type="text" id="name" name="search" placeholder="Ваше имя*">
+            <input type="text" id="number" name="search" placeholder="Ваш телефон*">
+            <input type="submit" value="Получить консультацию">
+          </form>
+        </div>
+      </div>
+      <div class="arrow"><img src="data:image/png;base64,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"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="main-footer">
+  <div class="contacts">
+    <div class="main-wrapper">
+      <div class="location">
+        <div class="section -left">
+          <div><img class="iconlocation" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAkCAYAAACNBsqdAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjA2NjREQjcyMDJGMTFFM0FDMDI5MzdFMjgyMzgwODkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjA2NjREQjgyMDJGMTFFM0FDMDI5MzdFMjgyMzgwODkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMDY2NERCNTIwMkYxMUUzQUMwMjkzN0UyODIzODA4OSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCMDY2NERCNjIwMkYxMUUzQUMwMjkzN0UyODIzODA4OSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ppr/Zr8AAAJtSURBVHjarJbNS5RRFMbfeUmIsUGwTMpFH0Oki0ACoQhcuM1NgRu3tREKWrhzN7hLJGjVH+BGcOEiDMe1KC1aTAQJfSEtmikQSiInuz1neK6drvfe13nHAz+Ye865z3vvnXM/EmNMEqAEpsALUDf/rE7fFHO8/X3OAngAdky27TC3kCVcBEumfVtiX69wCpZNflumxiHhadO5TVu91trAzoCPoDvpzHbBRfA1peN+RPQXmAU3ySx9PhONe61fHPp6YGp/wJincsYY89m6XWNZjp+BpMVInS8G+ohWQZaiB5wMTO1lZD1DMdHqEWET6Xw+Z+xgWruBacn27fUsQ6+zzbWJVmKr4lXgy32gCoaUb4i+vkCfltYJNtbArUDidfAGvGO7nFHLa7rcRszx2Yi7pWvHIFqzeqmawrOkczvQsGeF2CmeF6dzin7jOfFDGnrE4pjrYLRzVtQdsR31+0gphawBLmvh1EmQQCXHaCtaVJebpgtstVEJW+yTeZkK420Ijx/1lrasHEF0pZ3r33IV7EVE95jj7Z9G/pC3YD4Sn2dO4OD8/0tXQAWcY7sbbHtGu81YwtwK+x5aigHnobKgkiY8whMqvuA8XAascBl89txbev2qKlZ1/gf3vhStsgRXlfM1mHSfS2AQNMmg51k2yb7WVhMm2y8VI1XymITiRTXzpjgatgHuZDxrS5H4XTXIhjhmnDXa5Bts2LdVna0/zNxNR2NGTjep5Sfgoacaf4MP4Av4Tl8J9INL6s7U9hQ80iMY5Ut9P8eVtM++o+5rU9tZcBvcANfABZ7PXYw3ef5+AjWwAZ6Duhb5K8AA3yHqWmKwMrIAAAAASUVORK5CYII="></div>
+          <div>
+            <div class="-title1"><i>Наши контакты</i></div>
+            <div>
+              Представительство в Санкт-Петербурге:<br>
+              Россия, Санкт-Петербург, улица Тележная, д.37<br><br>
+              Представительство в Москве:<br>
+              Россия, Москва, Настасьинский переулок., д.4, к.2<br><br>
+              Время работы: Пн-Вс с 9-00 до 21-00 по МСК<br><br>
+              <img class="icontel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAfCAYAAACcai8CAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUVFMzJDM0I5RjlEMTFFMzgwNDNDODNFMzU3NEZEMEUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUVFMzJDM0M5RjlEMTFFMzgwNDNDODNFMzU3NEZEMEUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1RUUzMkMzOTlGOUQxMUUzODA0M0M4M0UzNTc0RkQwRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1RUUzMkMzQTlGOUQxMUUzODA0M0M4M0UzNTc0RkQwRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvCY1jwAAAMJSURBVHja7JZNaFNBEMf3PYOa9IMGq7bGaExTqLVqG41BRFsvVhRbRRFPglb0IgRB8epB0IMnUajiwZv4gQgVCgpaqpe0oRWhgoV8GLXqTZpIVWyf/00ndft4mveRFys48Mvb7JvZnUxmdlZ6t53pkXnARywjaoVxGagEC4ETVJBdBkyAr2AcfAFjxAdhnAJvPE+UH4UckTQc5puFQQg0g3XAD+Yze+U7SICX4AUYBFH8iMxsh9tmnDwB9pKzDjY3hEc8Ch6Aa56nSkZ625pzLgbWs7ktPOohGR/7/gFnGaXnfgdT2B4Txrx4JqnQuNynv+4zFVdGqAeuU0U1cYDmx6mQywzuu9uhKGytQaNt4Bm4Abpo7jHoLmDXJTh8FxwDW0G/gb2bZETYC5gBVtLTLcxV67BbIozdqrX04uURLjcY4TX0dAtzi3TYLRbGedsmg3tX8BzmZ99qA0ajoA4EhLmjoKOAXbUwDtAarw06nOAOx3Q4/J6OlX6KSreqkVQKBahHvOAVuALOgDY6BTwF7GJSKsxaMeillsolDoaJIXL0EzgMLoKaIh9XvEWfBrfAUnI8CFro6Sc93t53SslNuS819BeN0NEkCje8CjbbfM72gZO+qDIiTqbCUhXVTRzvPkrJ0G8XcIHzIALkErbiS+Ccb0D5pnn5SWzUNNwCbqoKq5TC8/vIqkFlQP1CZlP4/IUEzoI+EFC9K0QWXABB4CSCNJc1uFYjeJ7cIJ0C0qwIx1tmxgvAbdBpMiIdVLBawgunBzSaWPseL3j/kDIx7XBzbpLf2B6CdhMLZqko0gX0VlBRl5vY4xHY5R9WJmV0OgYOgXYaG+UySOvQS5OumT12cB/FHF5uMMdEemzSVePNpQL/BRZlzCZdTXEw6w7X6shfUdeaw0WIcCdd3vXqWhLZQk7liYB6HXr1pGt+L+6wsfuzJi7QCxr+oNNAOi4re03n8FRRWmkd3eyugzvUSBg1ioPguHAb/Os5nBcnXZQidl4ySnULK5oU41grrcOK8j/CtspPAQYAYFrRVP3Z4xEAAAAASUVORK5CYII="> 8 (800) 777-81-35<br><br>
+              <img class="icontel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAfCAYAAACcai8CAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUVFMzJDM0I5RjlEMTFFMzgwNDNDODNFMzU3NEZEMEUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUVFMzJDM0M5RjlEMTFFMzgwNDNDODNFMzU3NEZEMEUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1RUUzMkMzOTlGOUQxMUUzODA0M0M4M0UzNTc0RkQwRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1RUUzMkMzQTlGOUQxMUUzODA0M0M4M0UzNTc0RkQwRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvCY1jwAAAMJSURBVHja7JZNaFNBEMf3PYOa9IMGq7bGaExTqLVqG41BRFsvVhRbRRFPglb0IgRB8epB0IMnUajiwZv4gQgVCgpaqpe0oRWhgoV8GLXqTZpIVWyf/00ndft4mveRFys48Mvb7JvZnUxmdlZ6t53pkXnARywjaoVxGagEC4ETVJBdBkyAr2AcfAFjxAdhnAJvPE+UH4UckTQc5puFQQg0g3XAD+Yze+U7SICX4AUYBFH8iMxsh9tmnDwB9pKzDjY3hEc8Ch6Aa56nSkZ625pzLgbWs7ktPOohGR/7/gFnGaXnfgdT2B4Txrx4JqnQuNynv+4zFVdGqAeuU0U1cYDmx6mQywzuu9uhKGytQaNt4Bm4Abpo7jHoLmDXJTh8FxwDW0G/gb2bZETYC5gBVtLTLcxV67BbIozdqrX04uURLjcY4TX0dAtzi3TYLRbGedsmg3tX8BzmZ99qA0ajoA4EhLmjoKOAXbUwDtAarw06nOAOx3Q4/J6OlX6KSreqkVQKBahHvOAVuALOgDY6BTwF7GJSKsxaMeillsolDoaJIXL0EzgMLoKaIh9XvEWfBrfAUnI8CFro6Sc93t53SslNuS819BeN0NEkCje8CjbbfM72gZO+qDIiTqbCUhXVTRzvPkrJ0G8XcIHzIALkErbiS+Ccb0D5pnn5SWzUNNwCbqoKq5TC8/vIqkFlQP1CZlP4/IUEzoI+EFC9K0QWXABB4CSCNJc1uFYjeJ7cIJ0C0qwIx1tmxgvAbdBpMiIdVLBawgunBzSaWPseL3j/kDIx7XBzbpLf2B6CdhMLZqko0gX0VlBRl5vY4xHY5R9WJmV0OgYOgXYaG+UySOvQS5OumT12cB/FHF5uMMdEemzSVePNpQL/BRZlzCZdTXEw6w7X6shfUdeaw0WIcCdd3vXqWhLZQk7liYB6HXr1pGt+L+6wsfuzJi7QCxr+oNNAOi4re03n8FRRWmkd3eyugzvUSBg1ioPguHAb/Os5nBcnXZQidl4ySnULK5oU41grrcOK8j/CtspPAQYAYFrRVP3Z4xEAAAAASUVORK5CYII="> 8 (965) 048-72-00 (Санкт-Петербург)<br><br><br><br>
+              Индивидуальный предприниматель<br>
+              Захаров Артем Сергеевич<br>
+              ОГРНИП: 312784711600076; ИНН: 780531970399<br><br>
+              <a href="">Политика конфиденциальности</a>
+            </div>
+          </div>
+        </div>
+        <div class="section -right">
+          <div class="-title1"><i>Оплата и доставка</i></div>
+          <div>
+            Доставка по всей России - стоимость уточняйте у менеджера<br>
+            Заказанный товар оплачивается наличными при получении<br>
+            Время доставки: Пн - Пт с 10:00 - 22:00, Сб. с 10:00 - 18:00<br><br><br>
+            <b>Для Москвы и Санкт-Петербурга:</b><br>
+            Срок доставки до 2 дней.<br>
+            Самовывоз:<br>
+            10 пунктов выдачи в Санкт-Петербурге.<br>
+            7 пунктов выдачи в Москве.<br><br><br>
+            <b>Для регионов России:</b><br>
+            Заказ доставляется в один из центров выдачи в вашем городе.<br>
+            Более 750 постаматов и пунктов выдачи в более чем 172 городах России.<br>
+            Срок доставки от 3 дней в зависимости от местоположения вашего города.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="main-wrapper">
+      <div class="section">
+        <div class="-left">Copyright © 2016 Все права защищены</div>
+        <div class="-right">
+          Запрещено любое копирование материалов данного сайта<br>
+          без письменного согласия владельца интернет-магазина www.platok-orenburg.ru
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--
+<a class="fancybox" href="#popup">Fancy!!</a>
+<div id="popup">
+  <div class="tovar">Шаль «Оренбургское чудо»</div>
+  <div>Стоимость с учетом скидки: 8 990 р. (1шт)</div>
+  <div>Заполните форму</div>
+  <div>и наш менеджер свяжется с вами</div>
+  <div>для уточнения способа оплаты и адреса доставки:</div>
+
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancybox").fancybox({
+      width: 1000,
+      padding: 50,
+      autoScale: false,
+      autoDimensions: false
+    });
+  });
+</script>-->
+<script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="app.js"></script></body>
+</html>
