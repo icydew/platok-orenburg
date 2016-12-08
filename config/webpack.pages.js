@@ -8,8 +8,8 @@ module.exports = {
       template: './app/index.html'
     }),
     new HtmlWebpackPlugin({
-      filename: 'about.html',
-      template: './app/about.html'
+      filename: 'proverka.html',
+      template: './app/proverka.html'
     }),
     new HtmlWebpackPlugin({
       filename: 'templated.html',

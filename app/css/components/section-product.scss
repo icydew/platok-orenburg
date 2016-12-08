@@ -37,7 +37,7 @@
           padding-left: 10px;
           text-decoration: none;
         }
-        >span{
+        > span {
           font-size: 14px;
         }
 
@@ -66,22 +66,25 @@
     font-weight: 700;
     font-family: open sans, sans-serif;
     padding-top: 10px;
-    >.buy{
+    > .buy {
       padding-top: 10px;
 
-    .button {
-      padding: 10px 30px;
-      line-height: 71px;
-      color: #333333;
-      font-size: 19px;
-      background-color: #ffc800;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
-      &:hover{
-        box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+      .button {
+        margin-top: 10px;
+        position: absolute;
+        height: 71px;
+        width: 234px;
+        background-image: url("../../images/knopka-zheltaya-3.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        &:hover {
+          background-image: url("../../images/knopka-5.jpg");
+        }
       }
-    }
+      .yellowarrowleft2{
+        margin-left: 234px;
+        margin-top: -10px;
+      }
     }
   }
 }
