@@ -8,42 +8,7 @@
     > .-normal {
       padding-bottom: 10px;
     }
-    input[type=text] {
-      width: 320px;
-      box-sizing: border-box;
-      border: 2px solid #cccccc;
-      border-radius: 8px;
-      font-size: 16px;
-      background-color: white;
-      background-position: 10px 15px;
-      background-repeat: no-repeat;
-      padding: 15px 20px 15px 40px;
-      &#name {
-        background-image: url('../../images/user2.png');
-      }
-      &#number {
-        background-image: url('../../images/tel_52Z1pCs.png');
-      }
-    }
-    input[type=submit] {
-      margin-left: 10px;
-      background-color: #f7a800;
-      color: #333;
-      font-size: 17px;
-      font-weight: 600;
-      padding: 15px 25px;
-      border: 1px solid #333;
-      border-radius: 17px;
-      width: 245px;
-      cursor: pointer;
-      font-family: Trebuchet MS;
-    }
 
-    input[type=submit]:hover {
-      background-image: url("../../images/tolstaya-knopka-2.png");
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-    }
   }
   .arrow {
     padding-left: 800px;

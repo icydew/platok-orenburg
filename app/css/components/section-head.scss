@@ -1,0 +1,29 @@
+.section-head {
+  background-image: url("../../images/6_lteKuM0.jpg");
+  .head {
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .platok {
+      width: 270px;
+      height: 32px;
+    }
+    .telefon {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+    .number{
+     text-align: right;
+      line-height: 28px;
+      .phonenumber {
+        width: 23px;
+        height: 22px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.section-check {
+  text-align: center;
+  padding-top: 50px;
+  color: #212121;
+  > .user_number {
+    margin-top: 40px;
+    color: #666666;
+    font-size: 60px;
+    padding: 40px 20px;
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+  }
+  > .buttons {
+    display: flex;
+    flex-direction: row;
+    padding-top: 50px;
+    justify-content: center;
+    a {
+      .mistake {
+        border: 1px solid #9e9e9e;
+        background-image: url("../../images/aktivnaya-bolshaya-22.jpg");
+        height: 55px;
+        width: 360px;
+        margin-right: 100px;
+      }
+      .correctly {
+        background-image: url("../../images/aktivnaya-bolshaya-33.jpg");
+        height: 55px;
+        width: 360px;
+      }
+      &:hover {
+        .mistake {
+          background-image: url("../../images/passivnaya-bolshaya-22.jpg");
+        }
+        .correctly {
+          background-image: url("../../images/passivnaya-bolshaya-33.jpg");
+        }
+      }
+    }
+  }
+  .triangle {
+    background-image: url("../../images/222_NDfl5md.jpg");
+    height: 65px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 1440px;
+  }
+  .grey_background {
+    padding-top: 50px;
+    background-image: url("../../images/fon-1_rpIgAFe.jpg");
+    height: 470px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 1440px;
+    .iconphone {
+      padding-top: 15px;
+      padding-bottom: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .bluline {
+        height: 1px;
+        background-color: #0066ff;
+        width: 444px;
+      }
+      .icon {
+        padding: 0 20px;
+        > img {
+          width: 36px;
+          height: 25px;
+        }
+      }
+    }
+    .rectification {
+      background-color: #ededed;
+      width: 800px;
+      padding: 0 40px;
+      height: 134px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #cccccc;
+      .new_number {
+        background-image: url("../../images/aktivnaya-bolshaya-44.jpg");
+        width: 360px;
+        height: 50px;
+        &:hover {
+          background-image: url("../../images/passivnaya-bolshaya-44.jpg");
+        }
+      }
+    }
+  }
+}
