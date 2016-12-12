@@ -1,62 +1,88 @@
 @import "minireset.min";
 
 body {
-  font-family: open sans condensed,sans-serif;
+  font-family: open sans condensed, sans-serif;
   font-size: 13px;
   color: #212121;
 }
-p{
-  font-family: verdana,geneva,sans-serif;
+
+p {
+  font-family: verdana, geneva, sans-serif;
 }
 
 /* -------------------------------------
        TYPOGRAPHY
 ------------------------------------- */
-.-normal{
+
+.-small {
+  font-size: 11px;
+}
+.-normal {
   font-size: 14px;
 }
-.-large{
+
+.-large {
   font-size: 19px;
 }
-.-title1{
+
+.-title1 {
   font-size: 25px;
 }
-.-title2{
+
+.-title2 {
   font-size: 30px;
 }
-.-title3{
+
+.-title3 {
   font-size: 35px;
 }
-.-title4{
+
+.-title4 {
   font-size: 40px;
 }
-.-title5{
+
+.-title5 {
   font-size: 47px;
 }
-.-title6{
+
+.-title6 {
   font-size: 55px;
 }
-.-title7{
+
+.-title7 {
   font-size: 68px;
 }
-.-title8{
+
+.-title8 {
   font-size: 72px;
 }
-.-red{
-  color: #B22222;;
+
+.-bold {
+  font-weight: 700;
 }
-.-grey{
+.-red {
+  color: #b22222;
+}
+
+.-lightred{
+  color: #ED7C75;
+}
+
+.-grey {
   color: #666666;
 }
-.-lightgrey{
-  color: #d3d3d3;
 
+.-lightgrey {
+  color: #d3d3d3;
 }
 
 .-blu {
-  color: #668DD6;
+  color: #668dd6;
 }
-.-center{
+.-black{
+  color: #111111;
+}
+.-center {
   text-align: center;
 }
 
@@ -70,6 +96,19 @@ input[type=text] {
   background-position: 10px 15px;
   background-repeat: no-repeat;
   padding: 15px 20px 15px 40px;
+  &.mini{
+    width: 200px;
+    padding: 10px 15px;
+    margin-top: 5px;
+
+
+    &#name {
+      background-image: none;
+    }
+    &#number {
+      background-image: none;
+    }
+  }
   &#name {
     background-image: url('../images/user2.png');
   }
@@ -77,14 +116,15 @@ input[type=text] {
     background-image: url('../images/tel_52Z1pCs.png');
   }
 }
+
 input[type=submit] {
   margin-left: 10px;
   background-color: #f7a800;
-  color: #333;
+  color: #333333;
   font-size: 17px;
   font-weight: 600;
   padding: 15px 25px;
-  border: 1px solid #333;
+  border: 1px solid #333333;
   border-radius: 17px;
   width: 245px;
   cursor: pointer;
@@ -108,6 +148,8 @@ input[type=submit]:hover {
 @import "components/section-head";
 @import "components/section-check";
 @import "components/more-sale";
+@import "components/mob-container";
+@import "components/text-container";
 @import "components/pop-up";
 
 
