@@ -1,0 +1,102 @@
+.more-sale {
+  .separator {
+    height: 65px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 1440px;
+    &.-top {
+      background-image: url("../../images/222_NDfl5md.jpg");
+    }
+
+    &.-bottom {
+      background-image: url("../../images/888_qIX697R.jpg");
+    }
+  }
+  .iconbasket {
+    padding-top: 15px;
+    padding-bottom: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .bluline {
+      height: 1px;
+      background-color: #0066ff;
+      width: 444px;
+    }
+    .icon {
+      padding: 0 20px;
+      > img {
+        width: 40px;
+        height: 37px;
+      }
+    }
+  }
+  .column3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 90px;
+    > .element {
+      display: flex;
+      flex-direction: column;
+      height: 695px;
+      border: 1px solid #668dd6;
+      width: 305px;
+      justify-content: space-between;
+      &.-col2 {
+        width: 635px;
+      }
+
+      .product {
+        .photo {
+          > img {
+            border-bottom: 2px solid #668dd6;
+          }
+        }
+      }
+
+      .feature {
+        &.-col2 {
+          .-large {
+          margin:  0 180px;
+          }
+        }
+        .color {
+          font-size: 19px;
+          padding: 5px 0;
+        }
+        .-large {
+          font-size: 22px;
+          margin: 0 8px;
+          border-top: 1px solid #d3d3d3;
+          border-bottom: 1px solid #d3d3d3;
+        }
+        .price {
+          font-size: 22px;
+          padding: 10px 0;
+          > .-red {
+            color: #ff0000;
+          }
+        }
+        .order {
+          padding: 20px 0;
+          background: #ebebeb;
+          .button {
+            background-image: url("../../images/pas3.jpg");
+            width: 245px;
+            height: 35px;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            border: 1px solid #9e9e9e;
+            border-radius: 4px;
+            &:hover {
+              background-image: url("../../images/akt3_2E2jzbM.jpg");
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

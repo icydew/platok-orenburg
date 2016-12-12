@@ -45,6 +45,20 @@ p{
 .-red{
   color: #B22222;;
 }
+.-grey{
+  color: #666666;
+}
+.-lightgrey{
+  color: #d3d3d3;
+
+}
+
+.-blu {
+  color: #668DD6;
+}
+.-center{
+  text-align: center;
+}
 
 input[type=text] {
   width: 320px;
@@ -93,6 +107,7 @@ input[type=submit]:hover {
 @import "components/main-footer";
 @import "components/section-head";
 @import "components/section-check";
+@import "components/more-sale";
 @import "components/pop-up";
 
 

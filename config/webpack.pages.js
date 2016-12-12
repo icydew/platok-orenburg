@@ -12,6 +12,10 @@ module.exports = {
       template: './app/proverka.html'
     }),
     new HtmlWebpackPlugin({
+      filename: 'spasibo.html',
+      template: './app/spasibo.html'
+    }),
+    new HtmlWebpackPlugin({
       filename: 'templated.html',
       template: './app/templated.ejs',
       title: 'TEMPLATED PAGE'
