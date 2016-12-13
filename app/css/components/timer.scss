@@ -1,0 +1,71 @@
+
+.clock {
+  width: 300px;
+
+}
+
+.flip-clock-wrapper {
+}
+
+.flip-clock-wrapper ul {
+  width: 29.757978723404253px;
+  height: 48.55452127659574px;
+  margin: 2px;
+  background: transparent;
+}
+
+.flip-clock-divider {
+  width: 10px;
+  height: 60px;
+
+}
+
+.flip-clock-label {
+  display: none;
+}
+
+.flip-clock-dot {
+  width: 5px;
+  height: 5px;
+}
+
+.flip-clock-dot {
+  border-radius: 0;
+}
+
+.flip-clock-dot.top {
+  top: 35px;
+}
+
+.flip-clock-dot.bottom {
+  bottom: 34px;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+  font-size: 38px;
+  line-height: 50px;
+  background-image: url("../../images/bg_white.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 29.757978723404253px;
+  height: 48.55452127659574px;
+  background-color: transparent;
+  text-shadow: none;
+  color: #5e5c5a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+}
+
+.flip-clock-dot {
+  left: 3px;
+  background: #5e5c5a;
+}
+
+.flip-clock-wrapper .flip {
+  box-shadow: none;
+}
+
+.flip-clock-wrapper ul.play li.flip-clock-active .down .shadow {
+
+}
