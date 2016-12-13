@@ -7,8 +7,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="jquery.fancybox.css" type="text/css" media="screen"/>
   <script type="text/javascript" src="jquery.fancybox.js"></script>
-
-  <title>webpack-start</title>
+  <link rel="shortcut icon" href="икон.png" type="image/x-icon">
+  <title>Официальный сайт оренбургских пуховых платков | купить | заказать | цена</title>
 </head>
 <body>
 
@@ -472,7 +472,7 @@
             Напишите ваш честный отзыв или предложение:
           </div>
           <textarea class="recall" title=""></textarea>
-          <div class="button_recall"><a href="">ОТПРАВИТЬ ОТЗЫВ</a></div>
+          <div class="button_recall"><a class="fancybox" href="#popup">ОТПРАВИТЬ ОТЗЫВ</a></div>
 
         </div>
       </div>
@@ -493,5 +493,19 @@
 </div>
 
 
+<div id="popup" class="notification">
+  <div>Мы благодарим вас за отзыв. <br>Он обязательно поможет стать нашему магазину еще лучше благодаря вам!</div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancybox").fancybox({
+      width: 1000,
+      padding: 50,
+      autoScale: false,
+      autoDimensions: false
+    });
+  });
+</script>
 <script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="app.js"></script></body>
 </html>

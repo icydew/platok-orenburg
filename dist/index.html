@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300|Open+Sans+Condensed:300italic,300&amp;subset=cyrillic,latin" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="jquery.fancybox.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="flipclock.css" type="text/css" media="screen"/>
+  <link rel="shortcut icon" href="икон.png" type="image/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="jquery.fancybox.css" type="text/css" media="screen" />
   <script type="text/javascript" src="jquery.fancybox.js"></script>
-
-  <title>webpack-start</title>
+  <script type="text/javascript" src="flipclock.js"></script>
+  <title>Официальный сайт оренбургских пуховых платков | купить | заказать | цена</title>
 </head>
 <body>
 <div class="main-container -header">
@@ -20,7 +22,10 @@
           успейте заказать на выгодных условиях!</p>
         </div>
       </div>
-      <div class="-title1 -red">До окончания распродажи осталось:</div>
+      <div class="widget">
+        <div class="-title1 -red">До окончания распродажи осталось:</div>
+        <div class="clock"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -103,7 +108,11 @@
           которую вы предлагаете. Но я хотела ручной работы, в итоге подарила и произвела должное впечатление.<br>
           Бабушка очень довольна моим подарком!»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221876612&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false"></iframe>
+          <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+          <div class="audiotime">1 минута 26 секунд</div>
+        </div>
       </div>
     </div>
   </div>
@@ -147,7 +156,7 @@
         <div class="sale">
           <div class="-normal">Заказав эту модель, вы получаете: скидку -31% (экономия: 4 000 р.)</div>
           <div class="buy">
-            <a class="button" href=""></a>
+            <a class="button fancybox" href="#popup"></a>
             <img class="yellowarrowleft2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAR+SURBVHja7JxtiBVVGMd/u8q6ypaoixuoVCa6ZliZFJgZIQRLYClialJYpLuGoWbohxI1ycgVoXddlQRRxPJDRKIloQgGKuX6li+lvZcluWmur90+nP9lDtPc9t67c+/emTl/GOY5c8/MML8985znPOfMlqVSKbLVb3OfJ2YaDXwCzKlpfONt+4dykq06oAK4y/9D0sHcqf1ZB8ZTFVCb9hIOjKcBQF/Z3zswnkZofwVodmA8PaD9KeC0A+P5l/tl7wGuOjBGtwL9ZH8eVCGpYAZpfxHY6cB4GqP9MeA7B8aoJ/Cw7BOZKiURzFigRvYWB8bTZCva3eHAGNUCo2R/CPzhwBg9CHSWvf7/KiYJTCegQXazAjsHBphkpRk+batyUsCUA7NlXwbWODBGo4Bhst8HjjowRjOtFMM72TaxuGs8ME72LgJyL0kE0xV4ySq/mYtTirMetXqij7QlHkxfYKnsVuDlXLuxuGopcIvsHdn6lriDGQ1Mkd0CvJhP4BM39QCWW+VXga8dGBPApR3uIWBFvqFynPQ4XtoyBSwkYAYgaWCGA6utciMm50KSwdwoKFUqHwUWt3fUGQettPxKCngBuJB0MKuBiVa5HtgaRp4iypoBPGOVPwOawrhwlMHMB+zlYQeACXqVEgvmCWCBVb4APAv8GdYNoghmJibD39U69jSwN8ybRA3MLOB137F6YHPYN4oSmEUK7yutYyvUVYeuzgV+mDT4f9pxjSrgPfkVWwsFiyiC+QC4hDdfnKt6yp/UBQwUlxTjL1oI1WFWFkwChuZx/kPAkQAoi4CpwPUogumipo660DM5nFsBTJNDrbGOX5fjXUIRVKhXqR64V/Zx4Ncsz+sGrArwJwDPFcrRFqvFVCpUT2t7lueNUfTqh/IjZl6oaFAK1WImAgNl/w2sa6P+DZjE9QygzPfbL8BjwP5ixwZht5jbgGVW+S3gmwx1yxSxNus18UNZB9zeEVAK0WJeAaplt5J5VcEgjXWCuvFWTPZtMXCto6LJMME8oq45rZX8d1VktR64PqCFgMm8PRX2uKcjwQz1OccDvqi0j6DN9XXBditZhZktPF8K448wwFQoEu1jHWsAzqn7bdADd89w/pfAk5ipjpJRe8FUyUnebR2bB/ysnmYC0D/DuScxk2FbMLOFxAlME97aE4Cv5EcOqhsO0kXMcoxlBHxyF3Uw3YC1mAkuW3cQ8OGldBZ4DdgE/FDqOY58wFQCGzBrT9q6XgrzodRG4F3gp6gkf3IFU42ZmhjeRr0WYJtel31EULmCmZ0FFOR8DwODgZsUn5wudKqgI8G0ZllvsC+OuSxQH2OWe+0vdTC5jpUagenAbuB3THYu2/zMMA0DvtC2nPwSWCXZYi4pQm3CTKT3wqQfb8Z8Z1irkfUAzAKeygz3vE/bLDnyBto511wq3XVKDrYF+DbAwaah9RKwEcA9aiHdfS12ilrfnDgFeJn0l7ZTgpae9+kNDAFGyon3x6yuPFNqr1JZLv8mJUkqdwgcGAfGgXFgHJiS0b8DALdjzypKFQAxAAAAAElFTkSuQmCC">
           </div>
         </div>
@@ -267,7 +276,11 @@
           - Да, да, да! Исконно русский платок! -Очень хорошо! Спасибо вам огромное! Мы просто восхищены !»
 
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/274559087&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false" wmode="transparent"></iframe>
+          <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+          <div class="audiotime">45 секунд</div>
+        </div>
       </div>
     </div>
   </div>
@@ -526,7 +539,12 @@
           качественно.
           Потом я расплатилась. И поэтому вам огромное спасибо, продолжайте в том же духе.»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/274549805&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false" wmode="transparent"></iframe>
+          <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+          <div class="listening"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABqAG0DASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAUGAQIEBwMJ/8QAOhAAAQMDAwMDAQQIBQUAAAAAAQIDBAAFEQYhMRJBUQcTYSIUMnGBFSNCUmKRwdEWM0Oh8FNyorHx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AP04pSlApSlApSlApSlApStXHEMtqccUEISCpSlHAAHJJoNqVX9Ia5tWuWZr1occeYiPmOp1bRShZAz1IJ2Unfn+4zYKBSlKBSlKBSlKBSlKBSlec+omrJ85U3SmnUXOLqN0Mlma3FwwkFQKz7itsBIOSBtkYOQcB6G883HaW66tLTSElS1rICUgDJJJ4FeYG9I9cYt/s0NiXDsDIQGruhzpTKWDugo5LZ2/EDfGQK+WrNRxdVXydo++RpUKzoLSV3Jl3o63QQohaePbUMc58nyJ296de0g21cNMtJaYYH62HuUqQP6f7jnjNBCBOpoEe1aWsy4liEZ9PuTFtggtg56eng9W+/Ks4yDk16OxfLfIu8m1tTWHbjGQlx6MlY60JVwSO2f6jyKg0O2/1GsRcZUWJCPpUlX32V90q8j/AOiujSeg7bpNUiU22l+6y/qkzFnqWrO+Ao74z/Pv8BYqUpQKUpQKUpQKUrR55uMyt11aWmm0lS3FkBKQBkkk8Cgy44hptS1qCEJBKlKOAB5NVnXkXUUq3xZGm7gI78Zz3lx+gKElOPu5/p3z5AqL1lEi+rPp64LFdS/DeWFlUVW0hKSeppXfB8eQO1Vqz/pHQtpiSrBNTcrOSGl2mW59TSscNq5A/mN+O9BJJvMO9y2Z8qMGkykCJcWD/pr/AGVgntjv/Bg1L6dk3PSV8a09Nbdm297Jgy0JKi2kb9Cv4R/4/hjHLHk2rW7jjsBP2W6qGJNukYQs/wAQ7HHkbH4NXyBHdgwmGHHQ8422EKcAxnAoOa3WG3WiRJfiRUMvSVAuKT8cAeBuTj5rvrzvVnrLEsF7ctVttcrUEuMOqZ9jICIw8KV+98du5FXey3iNf7XGuEQqVHfT1J6xhQ3wQR2IIIP4UHbSlKBSlKBSlCcDJ2FBo++3GZceecS002krWtZwlIAySSeABVA1nq66Wi+QfdtcW56Imxyh+S2fdWpSu5HHT09t+oE77YrXW91XcNWMaSvNuQdK3eGpsy0uELU/1DpTt90DA85K09gRXFa47npilNiuQVO0w8Chp1Yz7I8fh5HbkUGGLKPTpabxpkCTp6VhbsVCspAPBB7Edj+RqSgtQBqKBd4EYzoVwc+kJTuy6fvZHbH3t/CvAqMRHuFluk2y6bmsT40tAUGnPrDHVyfH3fyOQceb/pvTrGmIRaaPVIcwp9wcKVjGw7UHY3bojU12YiK0iW6noW8EAKI8Z/5xVW19ryVomXaCmyvz7dJeKJUxpQxHTjbA7qJ3wcDAO+eNvUfVd60jDgS7VZhdY5kATVFzpLLXkAdzwDwMb81E6i9ZtMxY8aO5Gm3b7Y31ORorAWWk8frOpQCTkcAk9x2NB8Iun0aMhybhpRTblouQK1hWVhBVnfffGSeeODXO61O0u9YpVpvhmR3Fe27bj/lrBVleE9jlXPOcZznFbW2cdJ+3cbaV3PS09X1s9OVtqOx+k8K7EftY81dLPo212y5uXJpsqdXu0hxJHtZG/O/89xQTxGDilCcmlApStXHEMtqccUEISCpSlHAAHJJoMPPNx2luurS00hJUtayAlIAySSeBXjt19QLb6lSJtkmwprGjZI9hF6ZcU0XXAd87Y9s5HOfJGDtbrHrCx+rUe92tqDLk2hCQyuU+yUMSgrIPtq52wDvg7gio6JGY0wUaSuyOuyvgiHJIA6CTtv23P5H4VQfJXptc7fbEQGrm5ebW3hbHvnL7BH7p5xjbAJHgCrbaVs6t057M9sOqBLL3/en9oeDgg/niq9ZhedK3H/Dji3XoclCxAntt9ZjnG2QeUjwePwIxaNJadVpmzojOyftktai4++E9IUogDYeNqDfTWl4Oloy0REAvOnLj3Tgq+PgVWtfXi6XuCLPpGSlc52aIU6bGUFm3pxlRVj7qsED4ye4FSXqC3qaXbI8DTKW2n5jvsvzlrwqK0RutI7ntnkdge1c0JFgelbxsMphEdyU51m4/9ZZ2HWo9jvg+SQdzQcdlZa9LL7LhTdSS7vbFRfcfamFT60uEgDA3IyM7cEHfsal4zsa3RxfNNoZuNrljocT08DOOk5GQM+RtwRUpqq42PQEWXeXLQqTMuDiWSmNHLin3CMJSTghIONycA/JwK+/p3Yn7FYeqSz9kkS3DIVGHDWQBj8dv+YoOjRdidsVnKJCUpefdL6mRw3sMD8ds1PE5OTWSSTk81igUpSgVxXq2pvNmn29SihMqO4wVDkBSSnP+9dtKCgenV4Z07BY0tPSIEqMShkK2S4SSSAfOTkeQRiujW06BqOU/paKpmRf2mUTEsLV09LZVg/VjGcfsnGxBqwah0na9Us+3cGOsgYS6g4WB4+fzrm0poKyaL99dsjqEh/ZyQ6epahnOM+P7UE1b2XYUCMw657rzbSEOOfvKAAJ/M1TfWC+XWyaTSLO59nmTJKIn2oDJYQoKKlj5+nAPYqq8VyXa1R71b3ocpPUy4N8cgg5BHyDg0HmbfpxeNCxk3Swakn3R0AOSGJrinUP7bqwSc/8Av5q3M/o/1K0yFPNe05uhST9SmHMbj5HH4jHB4hGntU6EUqKzbF6htuT7HtKKVo78gK2+CNuxqd9P7HNtNqfeuLSI8uW77pYT/pjsKDu0ha7nZLSmNcZaJS21kMkbqS3wAVHn+2KmiSo5NYpQKUpQKUpQKUpQKUpQKUpQZBI4JrBOed6UoFKUoFKUoFKUoP/Z"></div>
+          <div class="audiotime">55 секунд</div>
+        </div>
       </div>
     </div>
   </div>
@@ -641,7 +659,12 @@
           мне понравилось. Через интернет никогда ничего не заказывала ,а тут заказала - мне понравилось.
           У меня отзыв к вам очень хороший – прямо на пятерку!»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/216848884&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false" wmode="transparent"></iframe>
+          <div class="audiotime">1 минута 36 секунд</div>
+          <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+          <div class="audiotime">55 секунд</div>
+        </div>
       </div>
     </div>
   </div>
@@ -755,7 +778,13 @@
           Пока нет необходимости пока, но может быть еще раз закажу. Спасибо большое вашей организации!:))
           Передайте всем кто исполнял заказ Огромное Спасибо! Удачи Вам!»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <div class="recall">
+            <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/216848805&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false" wmode="transparent"></iframe>
+            <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+            <div class="audiotime">3 минуты 1 секунда</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -822,7 +851,13 @@
           понравилось!
           Все остались довольные!! Удачи в работе ,чтобы у вас много клиентов было ,мне всё очень понравилось!...»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <div class="recall">
+            <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/274526627&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false" wmode="transparent"></iframe>
+            <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+            <div class="audiotime">1 минута 1 секунда</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -961,7 +996,13 @@
           хорошо!!:)))»
 
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <div class="recall">
+            <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/216848990&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false" wmode="transparent"></iframe>
+            <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+            <div class="audiotime">1 минута 27 секунд</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1073,7 +1114,11 @@
           за своей дверью.Даже сама упаковочка - пакетик, настолько всё культурно!
           Просто все на высоте, и вы - молодцы! Низкий вам поклон за ваше внимание!»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/274554792&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false" wmode="transparent"></iframe>
+          <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+          <div class="audiotime">1 минута 33 секунды</div>
+        </div>
       </div>
       <div class="comment">
         <div class="title">
@@ -1086,7 +1131,11 @@
           понравилось.
           Курьер доставил мне заказ тогда, когда я попросила, часов после десяти вечера. Все хорошо!»
         </div>
-        <div class="recall"></div>
+        <div class="recall">
+          <iframe width="100%" height="110" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/216849048&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false" wmode="transparent"></iframe>
+          <div class="listening"><img src="data:image/jpeg;base64,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"></div>
+          <div class="audiotime">1 минута 3 секунды</div>
+        </div>
       </div>
 
     </div>
@@ -1170,16 +1219,21 @@
   </div>
 </div>
 
-<!--
-<a class="fancybox" href="#popup">Fancy!!</a>
-<div id="popup">
+
+<div id="popup" class="pop-up">
   <div class="tovar">Шаль «Оренбургское чудо»</div>
-  <div>Стоимость с учетом скидки: 8 990 р. (1шт)</div>
-  <div>Заполните форму</div>
-  <div>и наш менеджер свяжется с вами</div>
-  <div>для уточнения способа оплаты и адреса доставки:</div>
-
-
+  <div class="cost">Стоимость с учетом скидки: 8 990 р. (1шт)</div>
+  <div class="forms">
+    <div class="title">Заполните форму</div>
+    <div class="subtitle">и наш менеджер свяжется с вами<br>
+      для уточнения способа оплаты и адреса доставки:
+    </div>
+    <form class="formpopup">
+      <input type="text" id="" name="" placeholder="Ваше имя*">
+      <input type="text" id="" name="" placeholder="Ваш телефон*">
+      <input type="submit" value="ЗАКАЗАТЬ ПО АКЦИИ">
+    </form>
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -1191,6 +1245,31 @@
       autoDimensions: false
     });
   });
-</script>-->
+</script>
+
+<script type="text/javascript">
+
+  var clock;
+
+  $(document).ready(function() {
+    var clock;
+
+    clock = $('.clock').FlipClock({
+      clockFace: 'DailyCounter',
+      autoStart: false,
+      callbacks: {
+        stop: function() {
+          $('.message').html('')
+        }
+      }
+    });
+
+    clock.setTime(020000);
+    clock.setCountdown(true);
+    clock.start();
+
+  });
+</script>
+
 <script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="app.js"></script></body>
 </html>
